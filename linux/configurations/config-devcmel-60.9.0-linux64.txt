@@ -1,0 +1,53 @@
+# Format du fichier de configuration:
+# fichier au format texte
+# Paramètres:
+#   chemintb="chemin de l'installateur ou package thunderbird"
+#   listemodules=( "module1-version" "module2-version" ...)
+#   chemincm2="repertoire de l'installateur courrielleur à produire"
+#   libcm2="libelle de l'installateur courrielleur à produire"
+#   tempdir="chemin du répertoire temporaire de travail"
+#   sfx="chemin du fichier 7zSD.sfx"
+#   apptag="chemin du fichier app.tag"
+# 
+# Commentaires:
+#   chemintb : exe à modifier (intégration des modules)
+#     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win64-20181005.exe"
+#   listemodules : chemin des versions des modules à intégrer
+#     exemple: ("/srv/projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/srv/projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/")
+#   chemincm2 : exemple "/srv/projets/cm2/"
+#   libcm2 : exemple : "cm2-8.0.exe"
+#   tempdir : exemple : "/tmp/cm2/" réservé à cet usage
+#   sfx : exemple "/d/Cm2/Dev/essais/7zSD.sfx"
+#   apptag : exemple "/d/Cm2/Dev/essais/app.tag"
+
+
+chemintb="/home/pm/Cm2/Dev/devcmel_tb60.9.0/release_linux64/dist/CourrielleurMel_8.5T2.linux-x86_64.tar.bz2"
+
+             
+listemodules=("/media/sf_projets/anaismoz/anais_Dev/" 
+              "/media/sf_projets/archibald/archibald_Dev/" \
+              "/media/sf_projets/cm2m2ssimo/cm2m2ssimo_Dev/" \
+              "/media/sf_projets/commentaires/commentaires_Dev/" \
+              "/media/sf_projets/ContactsDAV/contacts_Dev/" \
+              "/media/sf_projets/pacome/pacome_Dev/" \
+              "/media/sf_projets/courrielleur/VersionsTest/courrielleur_dev-8.5T2-20190912/" \
+              "/media/sf_projets/Lightning/Dev-8.5T2/dev-agenda-60.9.0/" \
+              "/media/sf_projets/color_folders/colorfolders_Dev/" \
+              "/media/sf_projets/mailredirect/mailredirect_Dev/" \
+              "/media/sf_projets/manually_sort_folders/manually_sort_folders_Dev/" \
+              "/media/sf_projets/signature/signature_Dev/")              
+
+chemincm2="/home/pm/Cm2/versions-cm2/"
+
+# terminaison .tar
+ladate=`date +%Y%m%d`
+libcm2="devcmel-8.5T2-tb60.9.0-$ladate.tar"
+
+tempdir="/home/pm/Cm2/temp/"
+
+sfx=""
+apptag=""
+
+# si 1 ne retire pas lightning, si 0 retire extension (cas intégration agenda)
+lightning=0
+

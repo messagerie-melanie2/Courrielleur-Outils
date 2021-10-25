@@ -1,0 +1,51 @@
+# Format du fichier de configuration:
+# fichier au format texte
+# Paramètres:
+#   chemintb="chemin de l'installateur ou package thunderbird"
+#   listemodules=( "module1-version" "module2-version" ...)
+#   chemincm2="repertoire de l'installateur courrielleur à produire"
+#   libcm2="libelle de l'installateur courrielleur à produire"
+#   tempdir="chemin du répertoire temporaire de travail"
+#   sfx="chemin du fichier 7zSD.sfx"
+#   apptag="chemin du fichier app.tag"
+# 
+# Commentaires:
+#   chemintb : exe à modifier (intégration des modules)
+#     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win32-20181005.exe"
+#   listemodules : chemin des versions des modules à intégrer
+#     exemple: ("/srv/projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/srv/projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/")
+#   chemincm2 : exemple "/srv/projets/cm2/"
+#   libcm2 : exemple : "cm2-8.0.exe"
+#   tempdir : exemple : "/tmp/cm2/"
+#   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
+#   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
+
+chemintb="/d/Cm2/Prod/cmel-8.5T3_win32/release-win/dist/install/sea/CourrielleurMel_8.5T3.win32.installer.exe"
+
+listemodules=("/f/anaismoz/VersionsTest/anais_cmel-8.5T3/" \ 
+              "/f/archibald/VersionsTest/archibald_cmel-8.5T2/" \
+              "/f/cm2m2ssimo/VersionsTest/cm2m2ssimo_cmel-8.5T2/" \ 
+              "/f/commentaires/VersionsTest/commentaires_cmel-8.5T2/" \
+              "/f/ContactsDAV/VersionsTest/contacts_cmel-8.5T2/" \ 
+              "/f/pacome/VersionsTest/pacome_cmel-8.5T3/" \
+              "/f/courrielleur/VersionsTest/courrielleur_cmel-8.5T3/" \
+              "/f/color_folders/Versions/colorfolders_cmel-8.5T2/" \ 
+              "/f/mailredirect/Versions/mailredirect_cmel-8.5T3/" \
+              "/f/manually_sort_folders/Versions/manually_sort_folders_cmel-8.5T2/" \ 
+              "/f/signature/Versions/signature_cm2-8.5T2/" \
+              "/f/WebAppsM2/Versions_pour_integration/WebAppM2_2.0.8_Courrielleur_8.5T2/" \
+              "/f/Lightning/VersionsCm2v8.5/agenda-cmel-8.5T3-60.9.1/")
+
+
+chemincm2="/d/Cm2/Prod/versions-cm2/"
+
+libcm2="CourrielleurMel_8.5T3.win32.installer.exe"
+
+tempdir="/d/Cm2/temp"
+
+sfx="/d/Cm2/Prod/cmel-8.5T3_win32/comm-esr60/comm/courrielleurm2/7zstub/7zSD.sfx"
+
+apptag="/d/Cm2/Prod/cmel-8.5T3_win32/comm-esr60/comm/mail/installer/windows/app.tag"
+
+# si 1 ne retire pas lightning, si 0 retire extension (cas intégration agenda)
+lightning=0

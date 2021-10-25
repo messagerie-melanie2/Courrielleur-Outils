@@ -1,0 +1,50 @@
+# Format du fichier de configuration:
+# fichier au format texte
+# Paramètres:
+#   chemintb="chemin de l'installateur ou package thunderbird"
+#   listemodules=( "module1-version" "module2-version" ...)
+#   chemincm2="repertoire de l'installateur courrielleur à produire"
+#   libcm2="libelle de l'installateur courrielleur à produire"
+#   tempdir="chemin du répertoire temporaire de travail"
+#   sfx="chemin du fichier 7zSD.sfx"
+#   apptag="chemin du fichier app.tag"
+# 
+# Commentaires:
+#   chemintb : exe à modifier (intégration des modules)
+#     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win32-20181005.exe"
+#   listemodules : chemin des versions des modules à intégrer
+#     exemple: ("/srv/projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/srv/projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/")
+#   chemincm2 : exemple "/srv/projets/cm2/"
+#   libcm2 : exemple : "cm2-8.0.exe"
+#   tempdir : exemple : "/tmp/cm2/"
+#   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
+#   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
+
+chemintb="/d/Cm2/Prod/cmel-8.6.0_win32/release-win/dist/install/sea/CourrielleurMel_8.5.win32.installer.exe"
+
+listemodules=("/y/anaismoz/courrielleur_anais/" \
+              "/y/archibald/courrielleur_archibald/" \
+              "/y/courrielleur/courrielleur_courrielleur/" \
+              "/y/ContactsDAV/courrielleur_contacts/" \
+              "/y/Lightning/courrielleur_lightning/" \
+              "/y/pacome/courrielleur_pacome/" \
+              "/y/commentaires/courrielleur_commentaires/" \
+              "/y/cm2m2ssimo/courrielleur_melanissimo/" \
+              "/y/WebAppsM2/courrielleur_webapps/" \
+              "/y/signature/courrielleur_signature/" \
+              "/y/mailredirect/courrielleur_mailredirect/" \
+              "/y/manually_sort_folders/courrielleur_manually_sort_folders/" \
+              "/y/color_folders/courrielleur_color_folders/")
+              
+chemincm2="/d/Cm2/Prod/versions-cm2/"
+
+libcm2="CourrielleurMel_8.6.0.win32.installer.exe"
+
+tempdir="/d/Cm2/temp"
+
+sfx="/d/Cm2/Prod/cmel-8.6.0_win32/comm-esr60/comm/courrielleurm2/7zstub/7zSD.sfx"
+
+apptag="/d/Cm2/Prod/cmel-8.6.0_win32/comm-esr60/comm/mail/installer/windows/app.tag"
+
+# si 1 ne retire pas lightning, si 0 retire extension (cas intégration agenda)
+lightning=0

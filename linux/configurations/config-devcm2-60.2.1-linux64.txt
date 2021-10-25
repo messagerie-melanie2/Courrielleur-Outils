@@ -1,0 +1,47 @@
+# Format du fichier de configuration:
+# fichier au format texte
+# Paramètres:
+#   chemintb="chemin de l'installateur ou package thunderbird"
+#   listemodules=( "module1-version" "module2-version" ...)
+#   chemincm2="repertoire de l'installateur courrielleur à produire"
+#   libcm2="libelle de l'installateur courrielleur à produire"
+#   tempdir="chemin du répertoire temporaire de travail"
+#   sfx="chemin du fichier 7zSD.sfx"
+#   apptag="chemin du fichier app.tag"
+# 
+# Commentaires:
+#   chemintb : exe à modifier (intégration des modules)
+#     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win64-20181005.exe"
+#   listemodules : chemin des versions des modules à intégrer
+#     exemple: ("/srv/projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/srv/projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/")
+#   chemincm2 : exemple "/srv/projets/cm2/"
+#   libcm2 : exemple : "cm2-8.0.exe"
+#   tempdir : exemple : "/tmp/cm2/" réservé à cet usage
+#   sfx : exemple "/d/Cm2/Dev/essais/7zSD.sfx"
+#   apptag : exemple "/d/Cm2/Dev/essais/app.tag"
+
+chemintb="/home/pm/Cm2/Dev/devcm2_tb60.2.1/release_linux64/dist/CourrielleurMelanie2_8.0T1.linux-x86_64.tar.bz2"
+
+#listemodules=("/media/sf_Projets/anaismoz/VersionsTest/anais_devcm2_tb60/" "/media/sf_Projets/archibald/VersionsTest/archibald_devcm2_tb60/" \
+#              "/media/sf_Projets/cm2m2ssimo/VersionsTest/cm2m2ssimo_devcm2_tb60/" "/media/sf_Projets/commentaires/VersionsTest/commentaires_devcm2_tb60/" \
+#              "/media/sf_Projets/ContactsDAV/VersionsTest/contacts_devcm2_tb60/" \
+#              "/media/sf_Projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/media/sf_Projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/" \
+#              "/media/sf_Projets/color_folders/Versions/colorfolders_devcm2_tb60/" "/media/sf_Projets/mailredirect/Versions/mailredirect_devcm2_tb60/" \
+#              "/media/sf_Projets/manually_sort_folders/Versions/manually_sort_folders_devcm2_tb60/" "/media/sf_Projets/signature/Versions/signature_devcm2_tb60/")
+             
+listemodules=("/media/sf_Projets/anaismoz/VersionsTest/anais_cm2-8.0T1/" "/media/sf_Projets/archibald/VersionsTest/archibald_cm2-8.0T1/" \
+              "/media/sf_Projets/cm2m2ssimo/VersionsTest/cm2m2ssimo_cm2-8.0T1/" "/media/sf_Projets/commentaires/VersionsTest/commentaires_cm2-8.0T1/" \
+              "/media/sf_Projets/ContactsDAV/VersionsTest/contacts_cm2-8.0T1/" \
+              "/media/sf_Projets/pacome/VersionsTest/pacome_cm2-8.0T1/" "/media/sf_Projets/courrielleur/VersionsTest/courrielleur_cm2-8.0T1/" \
+              "/media/sf_Projets/color_folders/Versions/colorfolders_cm2-8.0T1/" "/media/sf_Projets/mailredirect/Versions/mailredirect_cm2-8.0T1/" \
+              "/media/sf_Projets/manually_sort_folders/Versions/manually_sort_folders_cm2-8.0T1/" "/media/sf_Projets/signature/Versions/signature_cm2-8.0T1/")              
+
+chemincm2="/home/pm/Cm2/Dev/essais/"
+# terminaison .tar
+ladate=`date +%Y%m%d`
+libcm2="devcm2-8.0T1-$ladate.tar"
+
+tempdir="/home/pm/Cm2/Dev/essais/temp/"
+
+sfx=""
+apptag=""

@@ -1,0 +1,20 @@
+mk_add_options MOZ_OBJDIR=d:/Cm2/Dev/devmce_tb45.8.0/release-win32
+
+export WIN32_REDIST_DIR=/d/Cm2/dllMS
+
+export MOZ_TELEMETRY_REPORTING=0
+
+ac_add_options --enable-application=mail
+ac_add_options --with-l10n-base=d:/Cm2/Dev/devmce_tb45.8.0/fr-esr45
+ac_add_options --enable-ui-locale=fr
+ac_add_options --disable-tests
+ac_add_options --disable-debug
+ac_add_options --disable-crashreporter
+ac_add_options --enable-update-channel=esr
+ac_add_options --enable-update-packaging
+ac_add_options --with-branding=mail/branding/courrielleurmce
+ac_add_options --enable-signmar
+ac_add_options --enable-verify-mar
+ac_add_options --disable-maintenance-service
+ac_add_options --enable-require-all-d3dc-versions
+ac_add_options --enable-jemalloc

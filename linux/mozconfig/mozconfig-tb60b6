@@ -1,0 +1,34 @@
+. "$topsrcdir/build/mozconfig.comm-support"
+# . "$topsrcdir/build/unix/mozconfig.linux"
+. "$topsrcdir/build/mozconfig.stylo"
+# . "$commtopsrcdir/mail/config/mozconfigs/common"
+
+mk_add_options MOZ_OBJDIR=/home/pm/Cm2/Dev/devcm2_tb60.0b6/release_linux64/
+
+CC=/usr/local/stow/gcc-4.9.4/bin/gcc
+CXX=/usr/local/stow/gcc-4.9.4/bin/g++
+
+ac_add_options --enable-application=mail
+
+ac_add_options --with-l10n-base=/home/pm/Cm2/Dev/devcm2_tb60.0b6/fr-esr60/
+
+# ac_add_options --with-branding=courrielleur/branding
+ac_add_options --with-distribution-id=melanie2.i2
+ac_add_options --disable-tests
+ac_add_options --disable-crashreporter
+ac_add_options --enable-update-channel=esr
+# ac_add_options --enable-update-packaging
+ac_add_options --disable-debug
+ac_add_options --enable-release
+# ac_add_options --enable-calendar
+
+# Enable parallel compiling
+CONCURRENCY=$(( `grep processor /proc/cpuinfo | wc -l` + 2 ))
+mk_add_options MOZ_MAKE_FLAGS="-j$CONCURRENCY"
+
+# Avoid dependency on libstdc++ 4.5
+ac_add_options --enable-stdcxx-compat
+
+# Use ccache
+ac_add_options --with-ccache=/usr/bin/ccache
+

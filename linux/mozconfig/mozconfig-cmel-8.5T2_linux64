@@ -1,0 +1,38 @@
+
+export LLVM_CONFIG=/usr/lib/llvm-3.9/bin/llvm-config
+
+# Avoid dependency on libstdc++ 4.7
+export MOZ_STDCXX_COMPAT=1
+
+export LD_LIBRARY_PATH=/usr/local/stow/gcc-6.5.0/lib64
+
+mk_add_options AUTOCLOBBER=1
+export MOZ_TELEMETRY_REPORTING=0
+
+
+mk_add_options MOZ_OBJDIR=/home/pm/Cm2/Prod/cmel-8.5T2/release_linux64
+
+ac_add_options --with-l10n-base=/home/pm/Cm2/Prod/cmel-8.5T2/fr-esr60/
+
+
+ac_add_options --enable-application=comm/mail
+ac_add_options --enable-calendar
+ac_add_options --disable-elf-hack
+ac_add_options --disable-tests
+ac_add_options --disable-crashreporter
+ac_add_options --enable-update-channel=esr
+ac_add_options --disable-debug
+ac_add_options --enable-release
+
+# ac_add_options --disable-stylo 
+ac_add_options --with-clang-path=/home/pm/.mozbuild/clang/bin/clang
+ac_add_options --with-libclang-path=/home/pm/.mozbuild/clang/lib/
+
+# Enable parallel compiling
+CONCURRENCY=$(( `grep processor /proc/cpuinfo | wc -l` + 2 ))
+mk_add_options MOZ_MAKE_FLAGS="-j$CONCURRENCY"
+
+# Use ccache
+ac_add_options --with-ccache=/usr/bin/ccache
+
+

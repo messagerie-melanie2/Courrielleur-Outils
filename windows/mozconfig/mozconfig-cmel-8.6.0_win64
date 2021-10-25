@@ -1,0 +1,26 @@
+mk_add_options MOZ_OBJDIR=$topsrcdir/../release-win
+
+mk_add_options AUTOCLOBBER=1
+
+export WIN32_REDIST_DIR="C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Redist/MSVC/14.13.26020/x64/Microsoft.VC141.CRT"
+export WIN_UCRT_REDIST_DIR="C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x64"
+
+export MOZ_TELEMETRY_REPORTING=0
+
+ac_add_options --enable-application=comm/mail
+
+ac_add_options --enable-calendar
+
+ac_add_options --target=x86_64-pc-mingw32
+ac_add_options --host=x86_64-pc-mingw32
+
+ac_add_options --with-l10n-base=d:/Cm2/Prod/cmel-8.6.0_win64/fr-esr60
+ac_add_options --with-distribution-id=melanie2
+ac_add_options --enable-update-channel=esr
+ac_add_options --disable-tests
+ac_add_options --disable-debug
+ac_add_options --enable-jemalloc
+ac_add_options --disable-crashreporter
+ac_add_options --enable-js-shell
+ac_add_options --enable-rust-simd
+ac_add_options --disable-maintenance-service

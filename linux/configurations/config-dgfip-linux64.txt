@@ -1,0 +1,37 @@
+# Format du fichier de configuration:
+# fichier au format texte
+# Paramètres:
+#   chemintb="chemin de l'installateur ou package thunderbird"
+#   listemodules=( "module1-version" "module2-version" ...)
+#   chemincm2="repertoire de l'installateur courrielleur à produire"
+#   libcm2="libelle de l'installateur courrielleur à produire"
+#   tempdir="chemin du répertoire temporaire de travail"
+#   sfx="chemin du fichier 7zSD.sfx"
+#   apptag="chemin du fichier app.tag"
+# 
+# Commentaires:
+#   chemintb : exe à modifier (intégration des modules)
+#     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win64-20181005.exe"
+#   listemodules : chemin des versions des modules à intégrer
+#     exemple: ("/srv/projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/srv/projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/")
+#   chemincm2 : exemple "/srv/projets/cm2/"
+#   libcm2 : exemple : "cm2-8.0.exe"
+#   tempdir : exemple : "/tmp/cm2/"
+#   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
+#   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
+
+chemintb="/home/pm/Cm2/Prod/dgfip-tb60.9.1/release_linux64/dist/thunderbird-60.9.1.fr.linux-x86_64.tar.bz2"
+
+listemodules=("")
+              
+chemincm2="/home/pm/Cm2/versions-mce/"
+
+libcm2="dgfip-tb60.9.1.fr.linux-x86_64.tar"
+
+tempdir="/home/pm/Cm2/temp"
+
+sfx=""
+apptag=""
+
+# si 1 ne retire pas lightning, si 0 retire extension (cas intégration agenda)
+lightning=0

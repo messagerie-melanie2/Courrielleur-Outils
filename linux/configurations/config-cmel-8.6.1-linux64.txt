@@ -1,0 +1,52 @@
+# Format du fichier de configuration:
+# fichier au format texte
+# Paramètres:
+#   chemintb="chemin de l'installateur ou package thunderbird"
+#   listemodules=( "module1-version" "module2-version" ...)
+#   chemincm2="repertoire de l'installateur courrielleur à produire"
+#   libcm2="libelle de l'installateur courrielleur à produire"
+#   tempdir="chemin du répertoire temporaire de travail"
+#   sfx="chemin du fichier 7zSD.sfx"
+#   apptag="chemin du fichier app.tag"
+# 
+# Commentaires:
+#   chemintb : exe à modifier (intégration des modules)
+#     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win64-20181005.exe"
+#   listemodules : chemin des versions des modules à intégrer
+#     exemple: ("/srv/projets/pacome/VersionsTest/pacome_devcm2_tb60/" "/srv/projets/courrielleur/VersionsTest/courrielleur_devcm2_tb60/")
+#   chemincm2 : exemple "/srv/projets/cm2/"
+#   libcm2 : exemple : "cm2-8.0.exe"
+#   tempdir : exemple : "/tmp/cm2/"
+#   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
+#   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
+
+chemintb="/home/pm/Cm2/Prod/cmel-8.6.1/release_linux64/dist/CourrielleurMel_8.5.linux-x86_64.tar.bz2"
+
+listemodules=("/media/sf_projets/anaismoz/courrielleur_anais/" \
+              "/media/sf_projets/archibald/courrielleur_archibald/" \
+              "/media/sf_projets/courrielleur/courrielleur_courrielleur/" \
+              "/media/sf_projets/ContactsDAV/courrielleur_contacts/" \
+              "/media/sf_projets/Lightning/courrielleur_lightning/" \
+              "/media/sf_projets/pacome/courrielleur_pacome/" \
+              "/media/sf_projets/commentaires/courrielleur_commentaires/" \
+              "/media/sf_projets/cm2m2ssimo/courrielleur_melanissimo/" \
+              "/media/sf_projets/WebAppsM2/courrielleur_webapps/" \
+              "/media/sf_projets/signature/courrielleur_signature/" \
+              "/media/sf_projets/mailredirect/courrielleur_mailredirect/" \
+              "/media/sf_projets/manually_sort_folders/courrielleur_manually_sort_folders/" \
+              "/media/sf_projets/lookout/courrielleur_lookout/" \
+              "/media/sf_projets/color_folders/courrielleur_color_folders/")
+              
+
+
+chemincm2="/home/pm/Cm2/versions-cm2/"
+
+libcm2="CourrielleurMel_8.6.1.linux-x86_64.tar"
+
+tempdir="/home/pm/Cm2/temp"
+
+sfx=""
+apptag=""
+
+# si 1 ne retire pas lightning, si 0 retire extension (cas intégration agenda)
+lightning=0
