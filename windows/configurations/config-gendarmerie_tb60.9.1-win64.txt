@@ -22,6 +22,7 @@
 
 chemintb="/d/Cm2/Prod/gendarmerie-tb60.9.1_win64/release-win/dist/install/sea/thunderbird-60.9.1.fr.win64.installer.exe"
 
+#"/y/manually_sort_folders/courrielleur_manually_sort_folders/" \
 listemodules=("/y/anaismoz/courrielleur_anais/" \
               "/y/archibald/courrielleur_archibald/" \
               "/y/ContactsDAV/courrielleur_contacts/" \
@@ -32,7 +33,6 @@ listemodules=("/y/anaismoz/courrielleur_anais/" \
               "/y/WebAppsM2/courrielleur_webapps/" \
               "/y/signature/courrielleur_signature/" \
               "/y/mailredirect/courrielleur_mailredirect/" \
-              "/y/manually_sort_folders/courrielleur_manually_sort_folders/" \
               "/y/color_folders/courrielleur_color_folders/")
 
 chemincm2="/d/Cm2/Prod/versions-mce/"

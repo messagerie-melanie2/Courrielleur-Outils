@@ -22,6 +22,7 @@
 
 chemintb="/home/pm/Cm2/Prod/gendarmerie-tb60.9.1/release_linux64/dist/thunderbird-60.9.1.fr.linux-x86_64.tar.bz2"
 
+#   "/media/sf_projets/manually_sort_folders/courrielleur_manually_sort_folders/" \
 listemodules=("/media/sf_projets/anaismoz/courrielleur_anais/" \
               "/media/sf_projets/archibald/courrielleur_archibald/" \
               "/media/sf_projets/ContactsDAV/courrielleur_contacts/" \
@@ -32,7 +33,6 @@ listemodules=("/media/sf_projets/anaismoz/courrielleur_anais/" \
               "/media/sf_projets/WebAppsM2/courrielleur_webapps/" \
               "/media/sf_projets/signature/courrielleur_signature/" \
               "/media/sf_projets/mailredirect/courrielleur_mailredirect/" \
-              "/media/sf_projets/manually_sort_folders/courrielleur_manually_sort_folders/" \
               "/media/sf_projets/color_folders/courrielleur_color_folders/")
               
 chemincm2="/home/pm/Cm2/versions-mce/"
