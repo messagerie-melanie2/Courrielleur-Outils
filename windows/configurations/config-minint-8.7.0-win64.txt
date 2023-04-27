@@ -34,8 +34,8 @@ listemodules=("/y/anaismoz/courrielleur_anais/" \
               "/y/mailredirect/courrielleur_mailredirect/" \
               "/y/manually_sort_folders/courrielleur_manually_sort_folders/" \
               "/y/lookout/courrielleur_lookout/" \
-			  "/y/quicktext/courrielleur_quicktext/" \
-			  "/y/send_later/courrielleur_send_later/" \
+              "/y/quicktext/Courrielleur-Quicktext/" \
+              "/y/send_later/Courrielleur-Send-Later/" \
               "/y/color_folders/courrielleur_color_folders/")
 
 chemincm2="/d/Cm2/Prod/versions-cm2/"
