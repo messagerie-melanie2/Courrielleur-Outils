@@ -20,7 +20,7 @@
 #   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
 #   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
 
-chemintb="/d/Cm2/Prod/minint-8.7.0_win64/release-win/dist/install/sea/minint_8.5.win64.installer.exe"
+chemintb="/d/Cm2/Prod/minint-8.7.0_win64/release-win/dist/install/sea/CourrielleurMel_8.5.win64.installer.exe"
 
 listemodules=("/y/anaismoz/courrielleur_anais/" \
               "/y/archibald/courrielleur_archibald/" \

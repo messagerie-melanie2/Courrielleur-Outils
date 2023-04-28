@@ -5,7 +5,7 @@ repver="minint-8.7.0_win64"
 
 cd /d/Cm2/Prod/
 rm -Rf $repver
-hg clone /y/gmcd/courrielleur_sources/minint_tb60.9.1 $repver
+hg clone /y/gmcd/courrielleur_sources/cmel_tb60.9.1 $repver
 cd /d/Cm2/Prod/$repver/comm-esr60/
 cp /w/mozconfig/mozconfig-$repver mozconfig
 
