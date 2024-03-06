@@ -365,6 +365,7 @@ if [ $? != 0 ]; then
 fi
 
 cd ..
+rm $omni
 cp $omnicm2 $omni
 if [ $? != 0 ]; then
   abandon "Echec recopie omni.ja"
