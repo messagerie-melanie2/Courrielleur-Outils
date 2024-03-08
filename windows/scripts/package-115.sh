@@ -337,7 +337,7 @@ echo "======================================="
 echo "Nombre de modules a integrer:$nbmodules"
 
 if [ 0 -eq $nbmodules ]; then
-    echo "Aucun module détecté"
+    echo "Aucun module detecte"
 else
     i=0
     while [ $i -lt $nbmodules ]; do
@@ -360,17 +360,16 @@ rm $omnicm2
 cd $omnirep
 echo "Reconstruction de omni.ja"
 7z.exe a -tzip -mx0 ../$omnicm2 .
+#zip -qrXD0 ../$omnicm2 .
 if [ $? != 0 ]; then
   abandon "Echec reconstruction de omni.ja"
 fi
 
 cd ..
-rm $omni
 cp $omnicm2 $omni
 if [ $? != 0 ]; then
   abandon "Echec recopie omni.ja"
 fi
-
 
 #echo "Reconstruction du package"
 #rm "app.7z"
@@ -384,6 +383,3 @@ fi
 #if [ $? != 0 ]; then
 #  abandon "Echec reconstruction du package"
 #fi
-
-
-
