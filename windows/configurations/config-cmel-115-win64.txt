@@ -8,7 +8,7 @@
 #   tempdir="chemin du répertoire temporaire de travail"
 #   sfx="chemin du fichier 7zSD.sfx"
 #   apptag="chemin du fichier app.tag"
-# 
+#
 # Commentaires:
 #   chemintb : exe à modifier (intégration des modules)
 #     exemple: "/srv/partagesvm/Cm2v8/devcm2_tb60/devcm2_tb60.0_win32-20181005.exe"
@@ -20,14 +20,14 @@
 #   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
 #   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
 
-chemintb="/c/Projets/Courrielleur-Prod/Courrielleur-115a/release-win/dist/install/sea/Courrielleur115a.win64.installer.exe"
+chemintb="/c/Projets/Courrielleur-Prod/Courrielleur-115/release-win/dist/install/sea/Courrielleur115.win64.installer.exe"
 
 
 listemodules=("/c/Projets/Courrielleur-Pacome/")
 
-omni="/c/Projets/Courrielleur-Prod/Courrielleur-115a/omni.ja"
+omni="/c/Projets/Courrielleur-Prod/Courrielleur-115/omni.ja"
 chemincm2="/c/Projets/Courrielleur-Prod/"
-libcm2="Courrielleur115a.win64.installer.exe"
+libcm2="Courrielleur115.win64.installer.exe"
 tempdir="/c/Projets/Courrielleur-Prod/temp"
 
 
