@@ -16,7 +16,7 @@
 #   tempdir="chemin du répertoire temporaire de travail"
 #   sfx="chemin du fichier 7zSD.sfx"
 #   apptag="chemin du fichier app.tag"
-#
+# 
 # Commentaires:
 # -------------
 #   chemintb : exe à modifier (intégration des modules)
@@ -36,7 +36,7 @@
 # => extraction omni.ja OK
 # 7-Zip [64] 15.14 : Copyright (c) 1999-2015 Igor Pavlov : 2015-12-31
 # => extraction omni.ja OK
-#
+# 
 # debian jessie:7-Zip [64] 9.20  Copyright (c) 1999-2010 Igor Pavlov  2010-11-18
 # => echec extraction omni.ja (thunderbird windows)
 # cp omni.ja omni.zip
@@ -48,32 +48,30 @@ omnirep="omnirep"
 packagetb="packagetb"
 packagecm2="packagecm2"
 
-omnicm2="omni.zip"
+omnicm2="archive.zip"
 
 
 
 function InsereModule(){
 
   module=$1
-
+  
   if [ ! -d $module ]; then
     abandon "Erreur de module : '$module'"
   fi
-
+  
   echo ""
   echo "==============================="
   echo "Insertion du module depuis: '$module'"
-
+  
   # repertoire chrome
-  echo "-----------------------------------"
   echo "Traitement du repertoire chrome"
-  echo "-----------------------------------"
   rep=$module"/chrome"
   lrep=${#rep}
   # echo "longueur $lrep"
   for f in `find $rep -type f`;do
     # echo $f;
-    fichier=`basename $f`
+    fichier=`basename $f`   
     if [ "$fichier" != "${fichier/.manifest/}" ]; then
       echo "    ajout du contenu de $fichier"
       echo "" >> $tempdir"/"$omnirep"/chrome/chrome.manifest"
@@ -94,15 +92,13 @@ function InsereModule(){
       if [ $? != 0 ]; then
         abandon "Echec"
       fi
-    fi
+    fi        
   done
-
+  
   # repertoire modules
   rep=$module"/modules"
   if [ -d $rep ]; then
-	echo "-----------------------------------"
     echo "Traitement du repertoire modules"
-	echo "-----------------------------------"
     lrep=${#rep}
     # echo "longueur $lrep"
     for f in `find $rep -type f`;do
@@ -120,13 +116,11 @@ function InsereModule(){
       fi
     done
   fi
-
+  
   # repertoire components
   rep=$module"/components"
   if [ -d $rep ]; then
-    echo "-----------------------------------"
-    echo "Traitement du repertoire components"
-	echo "-----------------------------------"
+    echo "Traitement du repertoire components"  
     lrep=${#rep}
     # echo "longueur $lrep"
     for f in `find $rep -type f`;do
@@ -155,20 +149,62 @@ function InsereModule(){
 #        if [ "$fichier" != "${fichier/.xpt/}" ]; then
 #          echo "interfaces $fichier" >> $tempdir"/"$omnirep"/components/components.manifest"
 #        fi
-      fi
+      fi        
     done
   fi
-
+  
   # repertoire defaults
   rep=$module"/defaults"
   if [ -d $rep ]; then
-    echo "-----------------------------------"
-    echo "Traitement du repertoire defaults"
-	echo "-----------------------------------"
+    echo "Traitement du repertoire defaults"  
     lrep=${#rep}
     # echo "longueur $lrep"
     for f in `find $rep -type f`;do
       dest=$tempdir"/"$omnirep"/defaults"${f:lrep}
+      dir=`dirname $dest`
+      #echo "dir $dir"
+      mkdir -p $dir
+      if [ $? != 0 ]; then
+        abandon "Echec"
+      fi
+      echo "    copie du fichier '${f:lrep}' vers '$dest'"
+      cp $f $dest
+      if [ $? != 0 ]; then
+        abandon "Echec"
+      fi
+    done
+  fi
+  
+  # repertoire calendar-js (pour agenda)
+  rep=$module"/calendar-js"
+  if [ -d $rep ]; then
+    echo "Traitement du repertoire calendar-js"  
+    lrep=${#rep}
+    # echo "longueur $lrep"
+    for f in `find $rep -type f`;do
+      dest=$tempdir"/"$omnirep"/calendar-js"${f:lrep}
+      dir=`dirname $dest`
+      #echo "dir $dir"
+      mkdir -p $dir
+      if [ $? != 0 ]; then
+        abandon "Echec"
+      fi
+      echo "    copie du fichier '${f:lrep}' vers '$dest'"
+      cp $f $dest
+      if [ $? != 0 ]; then
+        abandon "Echec"
+      fi
+    done
+  fi
+  
+  # repertoire timezones (pour agenda)
+  rep=$module"/timezones"
+  if [ -d $rep ]; then
+    echo "Traitement du repertoire timezones"  
+    lrep=${#rep}
+    # echo "longueur $lrep"
+    for f in `find $rep -type f`;do
+      dest=$tempdir"/"$omnirep"/timezones"${f:lrep}
       dir=`dirname $dest`
       #echo "dir $dir"
       mkdir -p $dir
@@ -219,7 +255,7 @@ function abandon(){
 
 #vérification paramètres
 if [ -z $1 ]; then
-  abandon "Specifier en parametre le chemin du fichier de configuration"
+  abandon "Spécifier en paramètre le chemin du fichier de configuration"
 fi
 
 config=$1
@@ -235,7 +271,21 @@ echo "Fichier de configuration:$config"
 #
 source $config
 
-nbmodules=${#listemodules[@]}
+
+#   chemintb : exe à modifier (intégration des modules)
+if [ -z $chemintb ]; then
+  abandon "Chemin de l'installateur absent"
+fi
+if [ ! -f $chemintb ]; then
+  abandon "Chemin de l'installateur inexistant ou non conforme"
+fi
+
+#   listemodules : chemin des versions des modules à intégrer
+#if [ -z $listemodules ]; then
+#  abandon "Liste des modules inexistante ou non conforme"
+#fi
+
+nbmodules=${#listemodules[@]} 
 #if [ 0 -eq $nbmodules ]; then
 #  abandon "Aucun module specifie"
 #fi
@@ -255,7 +305,26 @@ if [ ! -f $apptag ]; then
 fi
 
 
-#   chemincm2 : exemple "/c/Projets/Courrielleur-Prod/"
+# # tests
+# i=0
+# while [ $i -lt $nbmodules ]; do
+  # # echo item: $i
+  # module=${listemodules[$i]}
+  # # echo "Module:$module"
+  
+  # InsereModule $module
+  
+  # let i=i+1
+# done
+# exit
+# # fin tests
+
+# echo "Nombre de modules a integrer:$nbmodules"
+# exit
+
+
+
+#   chemincm2 : exemple "/srv/projets/cm2/"
 if [ -z $chemincm2 ]; then
   abandon "Chemin de l'installateur courrielleur a produire non specifie"
 fi
@@ -264,24 +333,22 @@ if [ ! -d $chemincm2 ]; then
   abandon "Chemin de l'installateur courrielleur a produire non conforme"
 fi
 
-#   libcm2 : exemple : "Courrielleur115a.win64.installer.exe"
+#   libcm2 : exemple : "cm2-8.0.exe"
 if [ -z $libcm2 ]; then
   abandon "Libelle de l'installateur courrielleur a produire non specifie"
 fi
 
 
 
-#   tempdir : exemple : "/c/Projets/Courrielleur-Prod/temp"
+#   tempdir : exemple : "/tmp/cm2/"
 if [ -z $tempdir ]; then
-  abandon "Repertoire temporaire non specifie"
+  abandon "Repertore temporaire non specifie"
 fi
 
 if [ ! -d $tempdir ]; then
-  abandon "Repertoire temporaire inexistant ou non conforme"
+  abandon "Repertore temporaire inexistant ou non conforme"
 fi
 
-# On se place dans le dossier temporaire
-cd $tempdir
 
 
 #
@@ -291,6 +358,7 @@ echo ""
 echo "======================================="
 echo "Extraction de l'installateur thunderbird"
 
+cd $tempdir
 if [ ! -d $packagetb ]; then
   mkdir $packagetb
 fi
@@ -300,20 +368,17 @@ if [ $? != 0 ]; then
   abandon "Echec vidage $packagetb"
 fi
 
-#7z x -o$packagetb $chemintb
-#if [ $? != 0 ]; then
-#  abandon "Echec extraction installateur thunderbird"
-#fi
-
-
+7z x -o$packagetb $chemintb
+if [ $? != 0 ]; then
+  abandon "Echec extraction installateur thunderbird"
+fi
 
 # extraction omni.ja
 echo ""
 echo "======================================="
 echo "Extraction de omni.ja"
 
-#cp $packagetb/core/omni.ja .
-cp $omni .
+cp $packagetb/core/omni.ja .
 if [ ! -d $omnirep ]; then
   mkdir $omnirep
 fi
@@ -330,6 +395,20 @@ fi
 
 
 #
+# Retrait extension lightning
+#
+if [ $lightning -eq 0 ]; then
+  echo "Retrait extension lightning"
+  rm $packagetb"/core/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi"
+  rm $packagetb"/core/chrome/icons/default/calendar-alarm-dialog.ico"
+  rm $packagetb"/core/chrome/icons/default/calendar-event-dialog.ico"
+  rm $packagetb"/core/chrome/icons/default/calendar-event-summary-dialog.ico"
+  rm $packagetb"/core/chrome/icons/default/calendar-task-dialog.ico"
+  rm $packagetb"/core/chrome/icons/default/calendar-task-summary-dialog.ico"
+fi
+
+
+#
 # Insertion des modules
 #
 echo ""
@@ -337,19 +416,21 @@ echo "======================================="
 echo "Nombre de modules a integrer:$nbmodules"
 
 if [ 0 -eq $nbmodules ]; then
-    echo "Aucun module detecte"
+    echo "Aucun module détecté"
 else
     i=0
     while [ $i -lt $nbmodules ]; do
     # echo item: $i
     module=${listemodules[$i]}
     # echo "Module:$module"
-
+    
     InsereModule $module
-
+    
     let i=i+1
     done
 fi
+
+
 
 #
 # Reconstruction du package
@@ -360,26 +441,29 @@ rm $omnicm2
 cd $omnirep
 echo "Reconstruction de omni.ja"
 7z.exe a -tzip -mx0 ../$omnicm2 .
-#zip -qrXD0 ../$omnicm2 .
 if [ $? != 0 ]; then
   abandon "Echec reconstruction de omni.ja"
 fi
 
 cd ..
-cp $omnicm2 $omni
+cp $omnicm2 $packagetb/core/omni.ja
 if [ $? != 0 ]; then
   abandon "Echec recopie omni.ja"
 fi
 
-#echo "Reconstruction du package"
-#rm "app.7z"
-#cd $packagetb
-#7z.exe a -r -t7z -mx -m0=BCJ2 -m1=LZMA:d25 -m2=LZMA:d19 -m3=LZMA:d19 -mb0:1 -mb0s1:2 -mb0s2:3 ../"app.7z" .
-#if [ $? != 0 ]; then
-#  abandon "Echec reconstruction du package"
-#fi
-#cd ..
-#cat.exe $sfx $apptag "app.7z" > $chemincm2$libcm2
-#if [ $? != 0 ]; then
-#  abandon "Echec reconstruction du package"
-#fi
+
+echo "Reconstruction du package"
+rm "app.7z"
+cd $packagetb
+7z.exe a -r -t7z -mx -m0=BCJ2 -m1=LZMA:d25 -m2=LZMA:d19 -m3=LZMA:d19 -mb0:1 -mb0s1:2 -mb0s2:3 ../"app.7z" .
+if [ $? != 0 ]; then
+  abandon "Echec reconstruction du package"
+fi
+cd ..
+cat.exe $sfx $apptag "app.7z" > $chemincm2$libcm2
+if [ $? != 0 ]; then
+  abandon "Echec reconstruction du package"
+fi
+
+
+

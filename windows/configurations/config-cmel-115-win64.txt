@@ -20,14 +20,14 @@
 #   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
 #   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
 
-chemintb="/c/Projets/Courrielleur-Prod/Courrielleur-115/release-win/dist/install/sea/Courrielleur115.win64.installer.exe"
+chemintb="/c/Projets/Courrielleur-Prod/Builds/Courrielleur/20240318093724_thunderbird-115.8.1.fr.win64.installer.exe"
 
 
 listemodules=("/c/Projets/Courrielleur-Pacome/")
 
 omni="/c/Projets/Courrielleur-Prod/Courrielleur-115/omni.ja"
 chemincm2="/c/Projets/Courrielleur-Prod/"
-libcm2="Courrielleur115.win64.installer.exe"
+libcm2="Courrielleur-115.win64.installer.exe"
 tempdir="/c/Projets/Courrielleur-Prod/temp"
 
 
