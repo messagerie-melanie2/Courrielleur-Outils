@@ -381,6 +381,14 @@ if [ $lightning -eq 0 ]; then
   rm $packagetb"/core/chrome/icons/default/calendar-event-summary-dialog.ico"
   rm $packagetb"/core/chrome/icons/default/calendar-task-dialog.ico"
   rm $packagetb"/core/chrome/icons/default/calendar-task-summary-dialog.ico"
+  
+  echo "Retrait extension lightning de la version plat"
+  rm $chemindist"/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi"
+  rm $chemindist"/chrome/icons/default/calendar-alarm-dialog.ico"
+  rm $chemindist"/chrome/icons/default/calendar-event-dialog.ico"
+  rm $chemindist"/chrome/icons/default/calendar-event-summary-dialog.ico"
+  rm $chemindist"/chrome/icons/default/calendar-task-dialog.ico"
+  rm $chemindist"/chrome/icons/default/calendar-task-summary-dialog.ico"
 fi
 
 
@@ -406,6 +414,34 @@ else
     done
 fi
 
+#
+# Ajout du fichier configuration.cfg spécifique minint dans $omnicm2
+#
+echo ""
+echo "========================="
+echo "Copie de "$courrielleurcfg"/configuration.cfg sous "$chemindist
+cp $courrielleurcfg $chemindist
+cp $courrielleurcfg $packagetb"/core/"
+
+#
+# Ajout des extensions supplémentaires
+#
+echo "Ajout des extensions supplémentaires sur le plat"
+echo "--- Ajout SendLater3 ---"
+cp $extensionssources"sendlater3@kamens.us.xpi" $extensionsfolder
+cp $extensionssources"sendlater3@kamens.us.xpi" $packagetb"/core/distribution/extensions/"
+
+echo "--- Ajout Quicktext ---"
+cp $extensionssources"{8845E3B3-E8FB-40E2-95E9-EC40294818C4}.xpi" $extensionsfolder
+cp $extensionssources"{8845E3B3-E8FB-40E2-95E9-EC40294818C4}.xpi" $packagetb"/core/distribution/extensions/"
+
+echo "--- Ajout MultiLdap2 ---"
+cp $extensionssources"multildap2@cyrille.coppitters.xpi" $extensionsfolder
+cp $extensionssources"multildap2@cyrille.coppitters.xpi" $packagetb"/core/distribution/extensions/"
+
+echo "--- Ajout changeQuote ---"
+cp $extensionssources"{f6090211-2004-44d8-9090-be3c2adfd66f}.xpi" $extensionsfolder
+cp $extensionssources"{f6090211-2004-44d8-9090-be3c2adfd66f}.xpi" $packagetb"/core/distribution/extensions/"
 
 
 #
@@ -426,15 +462,6 @@ cp $omnicm2 $packagetb/core/omni.ja
 if [ $? != 0 ]; then
   abandon "Echec recopie omni.ja"
 fi
-
-#
-# Ajout du fichier configuration.cfg spécifique minint dans $omnicm2
-#
-echo ""
-echo "========================="
-echo "Copie de "$packagetb"/configuration.cfg sous "$omnicm2
-minintConfigOriginalPath = $packagetb"/configuration.cfg"
-cp minintConfigOriginalPath $omnicm2
 
 
 echo "Reconstruction du package"

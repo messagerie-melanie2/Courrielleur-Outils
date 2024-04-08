@@ -8,6 +8,7 @@ git checkout $branch
 git pull --all
 git branch
 echo "Commiting Mercurials..."
+hg add *
 hg commit -m "Commited by script"
 echo "----------------------------"
 
@@ -109,16 +110,16 @@ git pull --all
 git branch
 echo "----------------------------"
 
-echo "Switching branch for Quicktext"
-cd /srv/projets/quicktext/Courrielleur-Quicktext
-git checkout $branch
-git pull --all
-git branch
-echo "----------------------------"
+#echo "Switching branch for Quicktext"
+#cd /srv/projets/quicktext/Courrielleur-Quicktext
+#git checkout $branch
+#git pull --all
+#git branch
+#echo "----------------------------"
 
-echo "Switching branch for SendLater"
-cd /srv/projets/send_later/Courrielleur-Send-Later
-git checkout $branch
-git pull --all
-git branch
-echo "----------------------------"
+#echo "Switching branch for SendLater"
+#cd /srv/projets/send_later/Courrielleur-Send-Later
+#git checkout $branch
+#git pull --all
+#git branch
+#echo "----------------------------"

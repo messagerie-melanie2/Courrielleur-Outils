@@ -26,19 +26,21 @@ listemodules=("/y/anaismoz/courrielleur_anais/" \
               "/y/archibald/courrielleur_archibald/" \
               "/y/courrielleur/courrielleur_courrielleur/" \
               "/y/ContactsDAV/courrielleur_contacts/" \
-              "/y/Lightning/courrielleur_lightning/" \
               "/y/pacome/courrielleur_pacome/" \
+              "/y/Lightning/courrielleur_lightning/" \
               "/y/commentaires/courrielleur_commentaires/" \
               "/y/WebAppsM2/courrielleur_webapps/" \
               "/y/signature/courrielleur_signature/" \
               "/y/mailredirect/courrielleur_mailredirect/" \
               "/y/manually_sort_folders/courrielleur_manually_sort_folders/" \
               "/y/lookout/courrielleur_lookout/" \
-              "/y/quicktext/Courrielleur-Quicktext/" \
-              "/y/send_later/Courrielleur-Send-Later/" \
               "/y/color_folders/courrielleur_color_folders/")
 
 chemincm2="/d/Cm2/Prod/versions-cm2/"
+courrielleurcfg="/d/Cm2/Prod/minint-8.7.0_win64/comm-esr60/courrielleur.cfg"
+chemindist="/d/Cm2/Prod/minint-8.7.0_win64/release-win/dist/CourrielleurMel/"
+extensionssources="/d/Cm2/extensions/"
+extensionsfolder="/d/Cm2/Prod/minint-8.7.0_win64/release-win/dist/CourrielleurMel/distribution/extensions/"
 
 libcm2="CourrielleurMinint_8.7.0.win64.installer.exe"
 
