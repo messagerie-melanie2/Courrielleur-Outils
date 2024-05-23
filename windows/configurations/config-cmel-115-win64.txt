@@ -20,7 +20,7 @@
 #   sfx : exemple "/d/Cm2/Prod/essais/7zSD.sfx"
 #   apptag : exemple "/d/Cm2/Prod/essais/app.tag"
 
-chemintb="/c/Projets/Courrielleur-Prod/Builds/Courrielleur/20240318093724_thunderbird-115.8.1.fr.win64.installer.exe"
+chemintb="/c/Projets/Courrielleur-Prod/Builds/Courrielleur/Courrielleur-115.0.4.fr.win64.installer.exe"
 
 
 listemodules=("/c/Projets/Courrielleur-Pacome/")
