@@ -31,8 +31,8 @@ libcm2="Courrielleur-115.win64.installer.exe"
 tempdir="/c/Projets/Courrielleur-Prod/temp"
 
 
-sfx="/c/Projets/Courrielleur-115/other-licenses/7zstub/thunderbird/7zSD.sfx"
-apptag="/c/Projets/Courrielleur-115/comm/mail/installer/windows/app.tag"
+sfx="/c/Projets/Courrielleur-115.8.1/comm/other-licenses/7zstub/thunderbird/7zSD.sfx"
+apptag="/c/Projets/Courrielleur-115.8.1/comm/mail/installer/windows/app.tag"
 
 # si 1 ne retire pas lightning, si 0 retire extension (cas intégration agenda)
 lightning=0
